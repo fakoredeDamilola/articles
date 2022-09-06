@@ -6,7 +6,7 @@ particular value.
 "append"
 """
 
-class Element(object):
+class Node(object):
     def __init__(self, value):
         self.value = value
         self.next = None
@@ -15,14 +15,14 @@ class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
         
-    def append(self, new_element):
+    def append(self, new_node):
         current = self.head
         if current:
             while current.next:
                 current = current.next
-            current.next = new_element
+            current.next = new_node
         else:
-            self.head = new_element
+            self.head = new_node
             
    
     def print(self):
@@ -72,10 +72,10 @@ class LinkedList(object):
 
 # Test cases
 # Set up some Elements
-e1 = Element(1)
-e2 = Element(2)
-e3 = Element(3)
-e4 = Element(4)
+e1 = Node(1)
+e2 = Node(2)
+e3 = Node(3)
+e4 = Node(4)
 
 # Start setting up a LinkedList
 ll = LinkedList(e1)
